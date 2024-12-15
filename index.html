@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Einladung zu meinem Geburtstag 🎉</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #fdf7fb;
+            background-image: url('data:image/svg+xml,\
+                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">\
+                    <text x="0" y="20" font-size="20">🍬</text>\
+                    <text x="30" y="50" font-size="20">💅🏻</text>\
+                    <text x="60" y="30" font-size="20">💖</text>\
+                    <text x="10" y="70" font-size="20">💜</text>\
+                    <text x="40" y="90" font-size="20">💘</text>\
+                    <text x="70" y="70" font-size="20">✨</text>\
+                </svg>');
+            background-size: 100px;
+            background-repeat: repeat;
+            color: #333;
+            padding: 50px;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #ff66b2;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            margin: auto;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .options button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .yes-button {
+            background-color: #ff66b2;
+            color: white;
+        }
+
+        .no-button {
+            background-color: #bfbfbf;
+            color: white;
+        }
+
+        /* Konfetti-Styling */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ff66b2;
+            opacity: 0.7;
+            border-radius: 50%;
+            animation: fall 4s linear infinite;
+        }
+
+        @keyframes fall {
+            from { transform: translateY(-100vh); }
+            to { transform: translateY(100vh); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hallo ihr süßen 🥰</h1>
+        <p>Ich möchte euch hiermit herzlich zu meinem <strong>22. Geburtstag</strong> einladen.</p>
+        <p><strong>Wann?</strong> 29.12.<br><strong>Uhrzeit?</strong> 15 Uhr</p>
+        <p><strong>Wo?</strong> Bei mir zuhause:<br>Rosenstraße 25, Bergen</p>
+        <p><strong>Dresscode:</strong> Weiß, denn ihr seid meine Engel 🪽</p>
+        <p><em>PS: Bringt Hunger mit 👀</em></p>
+        
+        <h3>Bitte bestätigt, ob ihr teilnehmen werdet 👇🏻</h3>
+        <div class="options">
+            <button class="yes-button" onclick="alert('Juhuu, ich freue mich auf dich! 🥳')">Ich bin dabei 🥳</button>
+            <button class="no-button" onclick="alert('Schade... du Verräter 😔')">Ich bin ein Verräter 😔</button>
+        </div>
+    </div>
+
+    <script>
+        // Konfetti erstellen
+        function createConfetti() {
+            for (let i = 0; i < 100; i++) {
+                let confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = `${Math.random() * 100}vw`;
+                confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+                confetti.style.animationDuration = `${Math.random() * 2 + 3}s`;
+                confetti.style.width = `${Math.random() * 10 + 5}px`;
+                confetti.style.height = confetti.style.width;
+                document.body.appendChild(confetti);
+                setTimeout(() => confetti.remove(), 4000);
+            }
+        }
+
+        window.onload = createConfetti;
+    </script>
+</body>
+</html>
